@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <!-- create a navbar using tailwind css -->
+    <nav class='flex bg-white justify-between items-center h-16 text-black relative shadow-sm font-mono' role='navigation'>
+        <a href='#' class='pl-8'>Random Password Generator</a>
+        <div class='px-4 cursor-pointer md:hidden'>
+            <svg class='w-6 h-6' fill='none'm id="burger" stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+                <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M4 6h16M4 12h16M4 18h16' />
+            </svg>
+        </div>
+        <div class='pr-8 md:block hidden' id = 'menu'>
+            <a href='#' class='p-4'>Home</a>
+            <a href='#' class='p-4'>Code</a>
+            <a href='#' class='p-4'>Feedback</a>
+        </div>
+    </nav>
+
+    <!-- password display container and divs -->
+    <div class="mt-10 flex justify-center text-2xl font-mono items-center">
+        <div class="flex-col text-center">
+            <div class="text-black">
+                <h3>Password Generator</h3>
+            </div>
+            <div class="mt-6">
+                <div class="border bg-white h-[66px] sm:w-[450px] w-[380px] flex items-center justify-between">
+                    <div id="displayPass" class="text-black mx-3">
+                    </div>
+                    <img src="./copy" class="h-6 cursor-pointer mx-4" onClick='copyfunc()' alt="">
+                </div>
+            </div>
+                <div class="border bg-white mt-8 h-[450px]">
+                    
+                    <div class="text-left mt-10 flex justify-around items-center">
+                        <p class="text-sm">Character Length</p>
+                        <span id = 'pw-length'>20</span>
+                    </div>
+
+                    <div>
+                        <input type="range" min="1" max="20" value="20" class="slider w-[320px] mt-4" id="myRange">
+                    </div>
+                    
+                    <div class="mx-20">
+                        <div class="flex gap-4 justify-items-start items-center mt-6">
+                            <p class="text-sm">Include Uppercase</p>
+                            <input type="checkbox" id="uppercase" name="uppercase" value="uppercase">
+                        </div>
+                        <div class="flex gap-4 justify-items-start items-center mt-6">
+                            <p class="text-sm">Include Lowercase</p>
+                            <input type="checkbox" id="lowercase" name="lowercase" value="lowercase">
+                        </div>
+                        <div class="flex gap-8 justify-items-start items-center mt-6">
+                            <p class="text-sm">Include Numbers</p>
+                            <input type="checkbox" id="numbers" name="numbers" value="numbers">
+                        </div>
+                        <div class="flex gap-8 justify-items-start items-center mt-6">
+                            <p class="text-sm">Include Symbols</p>
+                            <input type="checkbox" id="symbols" name="symbols" value="symbols">
+                        </div>
+                    </div>
+
+                    <div class="flex justify-center items-center">
+                        <button class="mt-8 text-sm px-24 py-4 bg-black text-gray-200 rounded-sm " type="submit" id="submit">
+                            Generate Password
+                        </button>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+    <script src="./index.js"></script>
+</body>
+</html>
